@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content-helper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-field {
+  width: 30vw;
+  background-color: white;
+}
+
+.content-h1 {
+  margin: 0px 50px 50px;
+  padding-top: 20vh;
+  font-size: 5rem;
+  color: lightblue;
+}
+
+.card-container {
+  padding-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.search-button {
+  background-color: transparent;
+  color: white;
+}
