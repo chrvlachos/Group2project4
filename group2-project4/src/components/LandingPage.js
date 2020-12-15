@@ -6,7 +6,6 @@ import "./LandingPage.css";
 function LandingPage() {
   
   return (
-  <Router>
   <div className="container">
     <div className="title">
     <h1>Welcome to Group 2's library</h1>
@@ -22,9 +21,8 @@ function LandingPage() {
      </ul>
      <div className="shelf"></div>
     </div>
-    <NavLink to="/main"><button className="enter-button">Enter</button></NavLink>
+    <NavLink to="/home"><button className="enter-button">Enter</button></NavLink>
   </div>
-  </Router>
   )
 }
 

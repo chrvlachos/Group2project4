@@ -1,32 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import { client } from "../client";
 import "./Main.css";
-
+import InfoContainer from "./InfoContainer";
 
 export default function Main() {
-    return (
-        <div className="main-container">
-            <div className="logo"><b>G<span>ro</span>up<span>2</span><span> </span>Lib<span>ra</span>ry</b></div>
+  const [contentfuls, setContentfuls] = useState([]);
+  const [showInfos, setShowInfos] = useState(-1); //index of item in contentfuls array, -1 -> disable Infocontainer
+
+  //get Data from Contentful
+  useEffect(() => {
+    client
+      .getEntries()
+      .then((resp) => {
+        setContentfuls(resp.items);
+        console.log(resp.items);
+      })
+      .catch(console.error);
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <div className="main-container">
+        <section>
+          <div className="logo">
+            <b>
+              G<span>ro</span>up<span>2</span>
+              <span> </span>Lib<span>ra</span>ry
+            </b>
+          </div>
+        </section>
+        <section>
           <div className="book-container">
-             <ul className='list-inline'>
-                 <li className='book'>
-                     <img src='http://37signals.com/images/remote/remote_front.png' />
+            <ul className="list-inline">
+              {contentfuls.map((book, idx) => {
+                return (
+                  <li className="book">
+                    <img
+                      onClick={() => setShowInfos(idx)}
+                      src={book.fields.bookInfo.thumbnail}
+                    />
                   </li>
-
-                  <li className='book'>
-                     <img src='http://www.blanq.org/text/moleskine_iphone_wallpaper.jpg' />
-                  </li>
-
-                  <li className='book'>
-                     <img src='https://d.gr-assets.com/books/1348927776l/8032112.jpg' />
-                  </li>
-
-                  <li className='book'>
-                     <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
-                  </li>
-              </ul>
-           {/*End of first book row*/}
-           
-        </div>
-     </div>
-    )
+                );
+              })}
+              {showInfos > -1 ? (
+                <InfoContainer book={contentfuls[showInfos]} />
+              ) : (
+                ""
+              )}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }
