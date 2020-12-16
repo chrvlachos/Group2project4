@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import "./LandingPage.css";
-
+import Main from './Main';
 
 function LandingPage() {
   
@@ -24,6 +24,7 @@ function LandingPage() {
     </div>
     <NavLink to="/main"><button className="enter-button">Enter</button></NavLink>
   </div>
+   <Route path="/main" component={Main} />
   </Router>
   )
 }

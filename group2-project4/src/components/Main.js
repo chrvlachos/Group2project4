@@ -9,19 +9,19 @@ export default function Main() {
           <div className="book-container">
              <ul className='list-inline'>
                  <li className='book'>
-                     <img src='http://37signals.com/images/remote/remote_front.png' />
+                     <img src='http://37signals.com/images/remote/remote_front.png' alt="pic" />
                   </li>
 
                   <li className='book'>
-                     <img src='http://www.blanq.org/text/moleskine_iphone_wallpaper.jpg' />
+                     <img src='http://www.blanq.org/text/moleskine_iphone_wallpaper.jpg' alt="pic"/>
                   </li>
 
                   <li className='book'>
-                     <img src='https://d.gr-assets.com/books/1348927776l/8032112.jpg' />
+                     <img src='https://d.gr-assets.com/books/1348927776l/8032112.jpg' alt="pic"/>
                   </li>
 
                   <li className='book'>
-                     <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
+                     <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' alt="pic"/>
                   </li>
               </ul>
            {/*End of first book row*/}
