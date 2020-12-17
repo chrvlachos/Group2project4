@@ -8,10 +8,10 @@ import Header from "./Header";
 import "./ContentHelper.css";
 
 function ContentHelper() {
-  const [maxResults, setMaxResults] = useState(10);
-  const [startIndex, setStartIndex] = useState(1);
+  const [maxResults, setMaxResults] = useState(40);
+  const [startIndex, setStartIndex] = useState(0);
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(");
+  const [loading, setLoading] = useState("");
   const [cards, setCards] = useState([]);
 
   const fetchData = (add) => {
@@ -19,30 +19,25 @@ function ContentHelper() {
 
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&langRestrict=en&maxResults=${maxResults}&startIndex=${startIndex}&key=${process.env.REACT_APP_API_KEY}`
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&langRestrict=en&maxResults=${maxResults}&key=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
-        if (startIndex >= res.data.totalItems || startIndex < 1) {
-          alert(
-            `startIndex must be between 1 and ${res.data.totalItems} and is ${startIndex}`
-          );
-        } else {
-          if (res.data.items.length > 0) {
-            if (add) {
-              setCards([...cards, ...res.data.items]);
-            } else {
-              setCards(res.data.items);
-            }
-            setLoading(false);
-            //console.log(cards);
-          }
-        }
+        console.log(res.data.items);
+
+        setCards(res.data.items);
       })
       .catch((err) => {
         console.log(err);
       });
+    setLoading(false);
   };
 
+  const handleSubmitKeyDown = ({ keyCode }) => {
+    if (keyCode === 13) {
+      setStartIndex(1);
+      fetchData(false);
+    }
+  };
   const handleSubmit = () => {
     setStartIndex(1);
     fetchData(false);
@@ -68,6 +63,7 @@ function ContentHelper() {
               variant="outlined"
               className="search-field"
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleSubmitKeyDown}
               value={query}
             />
             <button
@@ -82,8 +78,16 @@ function ContentHelper() {
           <div className="card-container">
             {cards &&
               cards.map((card, idx) => {
-                console.log(cards, idx, card);
-                return <Card card={card} />;
+                // console.log(idx, card.volumeInfo);
+                return (
+                  <Card
+                    card={card}
+                    image={
+                      card.volumeInfo.imageLinks &&
+                      card.volumeInfo.imageLinks.smallThumbnail
+                    }
+                  />
+                );
               })}
             {cards.length > 0 ? (
               <button onClick={handleLoadMore}>Load More...</button>
