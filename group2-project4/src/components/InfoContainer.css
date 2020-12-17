@@ -1,0 +1,17 @@
+.info-container {
+  background-color: lightgray;
+  height: 50vh;
+  width: 50vw;
+  padding-top: 20px;
+  margin-top: 50px;
+  color: white;
+  border-radius: 10px;
+}
+
+.info-container__container {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

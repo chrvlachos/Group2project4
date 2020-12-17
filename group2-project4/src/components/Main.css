@@ -1,118 +1,127 @@
 .main-container {
-    display: flex;
-    flex-direction: column;
-    
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .book-container {
-    margin-top: 15vh;
-    display: flex;
-    flex-direction: column;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.book, .book img, .book::after, .book::before {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.book,
+.book img,
+.book::after,
+.book::before {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-body, html {
-    width: 100%;
-    height: 100%;
-    display: table;
-    text-align: center;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+  text-align: center;
 }
 body {
-    background: #fde3a7;
+  background: #fde3a7;
 }
+
+section {
+  height: 100vh;
+}
+
 ul {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 .list-inline {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 .list-inline > li {
-    display: inline-block;
-    margin-left: 2em;
+  display: inline-block;
+  margin-left: 2em;
 }
 .list-inline > li:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 .book {
-    cursor: pointer;
-    display: block;
-    width: 150px;
-    height: 220px;
-    position: relative;
-    background: #fff;
-    z-index: 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1), 0 9px 20px 0 rgba(0, 0, 0, .25);
-    overflow: hidden;
-    transition: box-shadow 0.3s linear;
+  cursor: pointer;
+  display: block;
+  width: 150px;
+  height: 220px;
+  position: relative;
+  background: #fff;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: box-shadow 0.3s linear;
 }
 .book img {
-    width: inherit;
-    height: inherit;
-    transform-origin: 0 50%;
-    transform: rotateY(0);
-    transition: all 0.45s ease;
+  width: inherit;
+  height: inherit;
+  transform-origin: 0 50%;
+  transform: rotateY(0);
+  transition: all 0.45s ease;
 }
 .book:hover {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25), 0 9px 20px 0 rgba(0, 0, 0, .45);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 9px 20px 0 rgba(0, 0, 0, 0.45);
 }
 .book:hover img {
-    transform: rotateY(-25deg);
-    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, .2);
+  transform: rotateY(-25deg);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.book::after, .book::before {
-    content: '';
-    display: block;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    background: #fff;
-    border: 1px solid #d9d9d9;
+.book::after,
+.book::before {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  background: #fff;
+  border: 1px solid #d9d9d9;
 }
 .book::before {
-    left: -3px;
+  left: -3px;
 }
 .book::after {
-    left: -6px;
+  left: -6px;
 }
 
 /************************** NEON TITLE CSSS ****************************************/
 
 @import url(//fonts.googleapis.com/css?family=Vibur);
-html,body{
-  height:100%
+html,
+body {
+  height: 100%;
 }
 body {
-  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
-  background-size:cover;
-  margin:0
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) center
+    no-repeat;
+  background-size: cover;
+  margin: 0;
 }
 .logo {
   text-align: center;
   width: 65%;
   height: 200px;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  margin: 20vh auto;
   user-select: none;
 }
 
-.logo b{
+.logo b {
   font: 400 19vh "Vibur";
   color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 0 10px 3px #000;
 }
-.logo b span{
+.logo b span {
   animation: blink linear infinite 2s;
 }
-.logo b span:nth-of-type(2){
+.logo b span:nth-of-type(2) {
   animation: blink linear infinite 3s;
 }
 @keyframes blink {
@@ -120,11 +129,10 @@ body {
     color: inherit;
     text-shadow: inherit;
   }
-  79%{
-     color: #333;
+  79% {
+    color: #333;
   }
   80% {
-    
     text-shadow: none;
   }
   81% {
