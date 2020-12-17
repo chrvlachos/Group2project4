@@ -1,5 +1,8 @@
 .Card__card-container {
+  background-color: lightblue;
+  border-radius: 10px;
   width: 200px;
+  min-height: 400px;
   margin: 10px;
   padding: 10px;
   border: black 2px solid;

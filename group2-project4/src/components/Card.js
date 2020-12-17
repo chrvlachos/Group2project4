@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Card.css";
 
-function Card({ card }) {
+function Card({ card, image }) {
   const [copySuccess, setCopySuccess] = useState("");
 
   const createObject = () => {
@@ -57,7 +57,7 @@ function Card({ card }) {
         Preview
       </a>
       <img
-        src={card && card.volumeInfo.imageLinks.smallThumbnail}
+        src={image && image}
         alt="Thumbnail"
       />
       <button onClick={copyToClipBoard}>Copy Object</button>

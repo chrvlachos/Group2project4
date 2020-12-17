@@ -23,15 +23,12 @@ export default function Main() {
     <>
       <Header />
       <div className="main-container">
-        <section>
           <div className="logo">
             <b>
               G<span>ro</span>up<span>2</span>
               <span> </span>Lib<span>ra</span>ry
             </b>
           </div>
-        </section>
-        <section>
           <div className="book-container">
             <ul className="list-inline">
               {contentfuls.map((book, idx) => {
@@ -51,7 +48,6 @@ export default function Main() {
               )}
             </ul>
           </div>
-        </section>
       </div>
     </>
   );
