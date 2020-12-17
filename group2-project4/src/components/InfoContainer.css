@@ -1,6 +1,7 @@
 .info-container {
-  background-color: lightgray;
-  height: 50vh;
+  /* background-color: lightgray; */
+  background-color:rgb(5, 5, 54);
+  height: auto;
   width: 50vw;
   padding-top: 20px;
   margin-top: 50px;
@@ -10,8 +11,26 @@
 
 .info-container__container {
   width: 100vw;
-  height: 50vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Book-title { 
+   color: #ffffff;
+   /* text-decoration: underline;  */
+   font-family: 'Lato', sans-serif;
+   font-size: 40px;
+   font-weight: 300;
+   line-height: 40px;
+   margin: 0 0 10px; }
+.info {
+  text-align: justify;
+  color:darkorange;
+  padding-left: 2%;
+}
+.hr{
+  border: 1px solid green ;
+  border-radius: 5px;
 }
