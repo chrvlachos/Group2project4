@@ -11,7 +11,7 @@ function ContentHelper() {
   const [maxResults, setMaxResults] = useState(10);
   const [startIndex, setStartIndex] = useState(1);
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(");
   const [cards, setCards] = useState([]);
 
   const fetchData = (add) => {
