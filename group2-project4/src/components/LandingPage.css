@@ -1,13 +1,14 @@
 .container {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(30, 144, 238);
   min-height: 100vh;
   justify-content: center;
   text-align: center;
   color: white;
-  padding-top: 10vh;
 }
 .title {
-  padding-bottom: 35vh;
+  padding-bottom: 30vh;
   font-size: 4vh;
 }
 body {
@@ -16,14 +17,32 @@ body {
   height: 100vh;
   margin: 0;
 }
+.enter-button{
+  background-color: rgb(30, 144, 238);
+  margin-top: 10vh;
+  padding: 5vh 10vh 5vh 10vh;
+  border-radius: 20px;
+  border-width: 0.5vh;
+  border: solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 4vh;
+  font-weight: 800;
+  margin-bottom: 10vh;
+}
+.enter-button:hover {
+  cursor: pointer;
+  background-color: rgb(1, 105, 190);
+}
+/********************************** Moving Books Start  ***********************************/
+
 .bookshelf_wrapper {
   position: relative;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0px auto;
 }
 .books_list {
-  margin: 0 auto;
+  margin: 0px auto;
   width: 300px;
   padding: 0;
 }
@@ -224,16 +243,78 @@ body {
  }
 }
 
-.enter-button{
-  background-color: rgb(30, 144, 238);
-  margin-top: 10vh;
-  padding: 5vh 10vh 5vh 10vh;
-  border-radius: 20px;
-  border-width: 0.5vh;
-  border: solid white;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 4vh;
-  font-weight: 800;
+
+/********************************** Moving Books End  ***********************************/
+/********************************** Word Animations Start  ***********************************/
+.science {
+  position: absolute;
+  left: 0px;
+  top: 20vh;
+  -webkit-animation: slide-right 10s ease-in 1s both;
+  animation: slide-right 10s ease-in 1s both;
+  }
+ 
+.technology {
+  position: absolute;
+  left: 0px;
+  top: 22vh;
+  -webkit-animation: slide-right 3s ease-in 1s both;
+  animation: slide-right 3s ease-in 1s both;
+  }
+ 
+.business {
+  position: absolute;
+  left: 0px;
+  top: 24vh;
+  -webkit-animation: slide-right 12s ease-in 1s both;
+  animation: slide-right 12s ease-in 1s both;
+  }
+.self {
+  position: absolute;
+  left: 0px;
+  top: 26vh;
+  -webkit-animation: slide-right 8s ease-in 1s both;
+  animation: slide-right 8s ease-in 1s both;
+  }      
+.economics {
+  position: absolute;
+  left: 0px;
+  top: 28vh;
+  -webkit-animation: slide-right 5s ease-in 1s both;
+  animation: slide-right 5s ease-in 1s both;
+  }
+.biology {
+  position: absolute;
+  left: 0px;
+  top: 30vh;
+  -webkit-animation: slide-right 4s ease-in 1s both;
+  animation: slide-right 4s ease-in 1s both;
+  } 
+.coding {
+  position: absolute;
+  left: 0px;
+  top: 32vh;
+  -webkit-animation: slide-right 9s ease-in 1s both;
+  animation: slide-right 9s ease-in 1s both;
+  }
+
+ @-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
 }
