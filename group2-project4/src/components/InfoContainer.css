@@ -3,6 +3,7 @@
 .info-container {
   /* background-color: lightgray; */
   background-color:rgb(104, 104, 119);
+  opacity: 80%;
   height: auto;
   width: 50vw;
   padding-bottom: 3vh;
@@ -24,9 +25,10 @@
 
 .info {
   font-family: 'Vollkorn', serif;
-  text-align: left;
+  text-align: justify;
   color:white;
   padding-left: 2%;
+  padding-right: 2%;
   font-size: 2vh;
 }
 .hr{
@@ -50,7 +52,7 @@
   font-size: 1.5vh;
   padding: 1vh;
   min-width: 5vw;
-  border-radius: 14px;
+  border-radius: 10px;
   margin-right: 1vh;
 }
 .Closing-button:hover {
