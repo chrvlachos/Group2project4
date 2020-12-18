@@ -42,7 +42,7 @@ export default function Main() {
                 );
               })}
               {showInfos > -1 ? (
-                <InfoContainer book={contentfuls[showInfos]} />
+                <InfoContainer book={contentfuls[showInfos]} setShowInfos={setShowInfos}/>
               ) : (
                 ""
               )}
