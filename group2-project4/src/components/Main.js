@@ -25,7 +25,7 @@ export default function Main() {
       <div className="main-container">
           <div className="logo">
             <b>
-              G<span>ro</span>up<span>2</span>
+              G<span>ro</span>up<span>4</span>
               <span> </span>Lib<span>ra</span>ry
             </b>
           </div>
