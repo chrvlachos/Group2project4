@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import IconButton from "@material-ui/core/IconButton";
 import axios from "axios";
 import Card from "./Card";
 import Header from "./Header";
