@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import { client } from "../client";
 import "./Main.css";
 import InfoContainer from "./InfoContainer";
+import axios from "axios";
 
 export default function Main() {
-  const [contentfuls, setContentfuls] = useState([]);
+  const [books, setBooks] = useState([]);
   const [showInfos, setShowInfos] = useState(-1); //index of item in contentfuls array, -1 -> disable Infocontainer
 
-  //get Data from Contentful
+  //get Data from API
   useEffect(() => {
-    client
-      .getEntries()
-      .then((resp) => {
-        setContentfuls(resp.items);
-        console.log(resp.items);
-      })
-      .catch(console.error);
-  }, []);
+  axios.get('http://localhost:5000/books')
+       .then(res => { 
+                setBooks(res.data.data);
+             })
+             .catch(err => 
+              {console.log(err)})
+     },[]);
 
   return (
     <>
@@ -31,18 +30,21 @@ export default function Main() {
           </div>
           <div className="book-container">
             <ul className="list-inline">
-              {contentfuls.map((book, idx) => {
+               {books.map((book, index) => (
+                <li key={book._id} className="book"><img onClick={() => setShowInfos(index)} src={book.imageUrl} alt="book cover"/></li>
+              ))}
+              {/* {books.map((book, idx) => {
                 return (
                   <li className="book">
                     <img
                       onClick={() => setShowInfos(idx)}
-                      src={book.fields.bookInfo.thumbnail}
+                      src={book.imageUrl}
                     />
                   </li>
                 );
-              })}
+              })} */}
               {showInfos > -1 ? (
-                <InfoContainer book={contentfuls[showInfos]} setShowInfos={setShowInfos}/>
+                <InfoContainer book={books[showInfos]} setShowInfos={setShowInfos}/>
               ) : (
                 ""
               )}

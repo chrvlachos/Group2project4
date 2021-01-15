@@ -13,11 +13,11 @@ function Header() {
                 {"Home"}
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink className="navlink" to="/content-helper">
                 {"Content Helper"}
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink className="navlink" to="/about">
                 {"About"}
